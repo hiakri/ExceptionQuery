@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^home/fileimport/$',views.file_import),
     url(r'^home/exceptionquery/$',views.exception_query),
     url(r'^home/statisticsshow/$',views.statistics_show),
-    #url(),#exceptionquery 结果页面
+    url(r'^home/queryresult',views.query_result()),#exceptionquery 结果页面
     #url(),#statistics 结果页面
 ]
