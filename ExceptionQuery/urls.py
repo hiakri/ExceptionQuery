@@ -20,12 +20,24 @@ from EQuery import views
 from django.conf.urls.static import  static
 from django.conf import settings
 from django.conf.urls import url
+from EQuery.views import index
+
 urlpatterns = [
     url(r'^admin/',admin.site.urls),
+    url(r'^$',name='index'),
+    url(r'^index/EQuery$', index,name='EQuery'),
+    url(r'^index/EImport$', index,name='EImport'),
+    url(r'^index/EShow$', index,name='EShow'),
+    url(r'^EQuery/',include('EQuery.urls')),
+    url(r'^EShow/',include('EShow.urls')),
+    url(r'^EImport/',include('EImport.urls')),
+    #创建多app后修改url
+    '''
     url(r'^home/$',views.home),
     url(r'^home/fileimport/$',views.file_import),
     url(r'^home/exceptionquery/$',views.exception_query),
     url(r'^home/statisticsshow/$',views.statistics_show),
     url(r'^home/queryresult',views.query_result()),#exceptionquery 结果页面
     #url(),#statistics 结果页面
+    '''
 ]
