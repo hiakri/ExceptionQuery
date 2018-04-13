@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.http import *
 def index(request):
-    return HttpResponse("默认页面")
+    return HttpResponse("homepage")
 '''
 from  __future__ import unicode_literals
 from django.http import HttpResponse

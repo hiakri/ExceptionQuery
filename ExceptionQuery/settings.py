@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'EQuery.apps.EqueryConfig',
+    'EShow'
+    'EImport'
+    'homepage'
 ]
 
 MIDDLEWARE = [
