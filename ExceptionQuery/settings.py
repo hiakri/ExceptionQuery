@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'EShow'
     'EImport'
     'homepage'
+    'file'
 ]
 
 MIDDLEWARE = [

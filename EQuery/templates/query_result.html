@@ -82,16 +82,17 @@ text-align:center;
         </tr>
     {% for film in films_name %}
         <tr>
-            <td width="30%">{{ exception.description }}</td>
-            <td width="40%">{{ exceptio.example }}</td>
+            <td width="40%">{{ exception.description }}</td>
+            <td width="60%">{{ exceptio.example }}</td>
         </tr>
     {% endfor %}
 
 </table>
 <div class="button big blue" style="margin-top:23px;">
-    <a href="http://127.0.0.1:8000/home/exceptionquery/">返回查询页面</a>
+    <a href="http://127.0.0.1:8000/exceptionquery/">返回查询页面</a>
 </div>
 <div class="button big green" style="margin-top:23px;">
+    #修改homepage包中的index函数后修改
     <a href="http://127.0.0.1:8000/home/">返回首页</a>
 </div>
 </body>
