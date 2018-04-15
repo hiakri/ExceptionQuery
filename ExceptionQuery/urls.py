@@ -24,7 +24,7 @@ from homepage.views import index
 
 urlpatterns = [
     url(r'^admin/',admin.site.urls),
-    url(r'^$',name='index'),
+    url(r'^$',index,name='index'),
     url(r'^EQuery/',include('EQuery.urls')),
     url(r'^EShow/',include('EShow.urls')),
     url(r'^EImport/',include('EImport.urls')),

@@ -4,10 +4,11 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from file.forms import UploadFileForm
 from django.template import loader, RequestContext
-
+from django.shortcuts import render
 # Create your views here.
 def index(request):
-    return HttpResponse("homepage")
+    return render(request, 'home.html')
+
 
 def uploadfile(request):
     if request.POST:

@@ -8,8 +8,7 @@ from django.http import *
 from django.db import models
 from django.db.models import F,Q
 #定义homepage显示函数
-def index(request):
-    return HttpResponse("homepage")
+from django.shortcuts import render
 #定义异常查询页面入口函数，即异常查询页面
 def exception_query(request):
     name=models.exception.objects.all()
