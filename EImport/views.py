@@ -1,14 +1,13 @@
 
 from __future__ import unicode_literals
-from django.temlate import loader,Context
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-
+from file.forms import UploadFileForm
+from django.template import loader, RequestContext
 
 # Create your views here.
 def index(request):
     return HttpResponse("homepage")
-
 
 def uploadfile(request):
     if request.POST:
@@ -37,4 +36,4 @@ def uploadfile(request):
 
     else:
         form = UploadFileForm()
-    return render_to_response('book/upload.html', {'form': form}, context_instance=RequestContext(request))
+    return render_to_response('import/upload.html', {'form': form}, context_instance=RequestContext(request))
