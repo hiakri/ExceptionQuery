@@ -1,12 +1,12 @@
 
-from django.conf.urls import url
-from django.contrib import admin
+
+# -*-coding:utf-8 -*-
 from homepage.views import index
 from django.conf.urls import url
-
+from django import views
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^index/$', index,name='index'),
-    url(r'^upload/$', 'views.uploadfile', name="import_uploadfile"),
+
+    url(r'^index/$', index, name='index'),
+    url(r'^upload/$', views.uploadfile, name="import_uploadfile"),
 
 ]
