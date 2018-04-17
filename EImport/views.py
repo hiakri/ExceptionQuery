@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from file.forms import UploadFileForm
+
 from django.template import loader, RequestContext
 from django.shortcuts import render
 from file.forms import UploadFileForm
@@ -36,7 +36,7 @@ def uploadfile(request):
                 exception = Exception(name=arg[0], description=arg[1], example=arg[2], hit=hit)
                 exception.save()
         f.close()
-        return render_to_response('import/success.html')
+        return render_to_response('EImport/success.html')
 
     else:
         form = UploadFileForm()

@@ -17,11 +17,12 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from homepage.views import index
-
+from EQuery import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
     url(r'^EQuery/', include('EQuery.urls',)),
+    url(r'^query/$', views.query_result),
     url(r'^EShow/', include('EShow.urls')),
     url(r'^EImport/', include('EImport.urls')),
     url(r'^homepage/', include('homepage.urls')),
