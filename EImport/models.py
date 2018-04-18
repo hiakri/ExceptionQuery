@@ -12,3 +12,5 @@ class Exception(models.Model):
     description=models.CharField(max_length=200)
     example=models.CharField(max_length=200)
     hit=models.IntegerField()
+
+

@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.template import loader, RequestContext
 from django.shortcuts import render
 from file.forms import UploadFileForm
+from django import forms
 # Create your views here.
 
 
@@ -13,9 +14,16 @@ def index(request):
     return render(request, 'home.html')
 
 
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()
+
+
 def uploadfile(request):
     if request.POST:
+
         form = UploadFileForm(request.POST, request.FILES)
+
         f = request.FILES['file']
         line = f.readline()  # 读取表头
         while True:
@@ -36,8 +44,10 @@ def uploadfile(request):
                 exception = Exception(name=arg[0], description=arg[1], example=arg[2], hit=hit)
                 exception.save()
         f.close()
-        return render_to_response('EImport/success.html')
+        return HttpResponse('upload ok!')
 
     else:
+
         form = UploadFileForm()
-    return render_to_response('import/upload.html', {'form': form}, context_instance=RequestContext(request))
+
+    return render_to_response('EImport/upload.html', {'form': form}, context_instance=RequestContext(request))
