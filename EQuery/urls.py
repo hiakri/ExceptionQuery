@@ -1,7 +1,8 @@
 # -*-coding:utf-8 -*-
 from django.conf.urls import url
 from homepage.views import index
-from EQuery import views
+from django import views
+
 urlpatterns = [
 
     url(r'^index/$', index, name='index'),
