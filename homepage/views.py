@@ -7,3 +7,14 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'home.html')
 
+
+def toupload(request):
+    return render(request, 'upload.html')
+
+
+def toexception_query(request):
+    return render(request, 'exception_query.html')
+
+
+def toshow(request):
+    return render(request, 'show.html')

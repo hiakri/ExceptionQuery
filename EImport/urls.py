@@ -3,7 +3,7 @@
 # -*-coding:utf-8 -*-
 from homepage.views import index
 from django.conf.urls import url
-from django import views
+from EImport import views
 urlpatterns = [
 
     url(r'^index/$', index, name='index'),

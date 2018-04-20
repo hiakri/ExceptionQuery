@@ -16,7 +16,8 @@ from django import forms
 def index(request):
     return render(request, 'home.html')
 
-    def uploadfile(request):
+
+def uploadfile(request):
         if request.POST:
 
             form = UploadFileForm(request.POST, request.FILES)
