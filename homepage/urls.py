@@ -1,12 +1,14 @@
 # -*-coding:utf-8 -*-
 from django.conf.urls import url
-from homepage.views import index,toupload,toexception_query,toshow
+from homepage.views import index,upload,exception_query,show
 
 urlpatterns = [
 
     url(r'^index/$', index, name='index'),
-    url(r'^toupload/$', toupload, name='toupload'),
-    url(r'^toexceptionquery/$', toexception_query, name='toexceptionquery'),
-    url(r'^toshow/$', toshow, name='toshow'),
+
+    url(r'^EImport/upload/$', upload, name='upload'),
+    url(r'^EQuery/exceptionquery/$', exception_query, name='exceptionquery'),
+    url(r'^EShow/show/$', show, name='show'),
+
 
 ]

@@ -8,13 +8,13 @@ def index(request):
     return render(request, 'home.html')
 
 
-def toupload(request):
+def upload(request):
     return render(request, 'upload.html')
 
 
-def toexception_query(request):
+def exception_query(request):
     return render(request, 'exception_query.html')
 
 
-def toshow(request):
+def show(request):
     return render(request, 'show.html')
