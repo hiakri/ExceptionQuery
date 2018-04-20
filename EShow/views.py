@@ -8,7 +8,8 @@ def index(request):
     return render(request, 'home.html')
 
 def show(request):
-    exceptions=Exception.objects.all()  #获取hit值前五的行,此处待修改
+    exceptions = Exception.objects.order_by("hit")
+    exceptions.objects.all()[:5]
     listx = []
     listy = []
     for exception in exceptions:  #遍历，拼横纵坐标
