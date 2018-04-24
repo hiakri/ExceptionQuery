@@ -1,6 +1,6 @@
 # -*-coding:utf-8 -*-
 from __future__ import unicode_literals
-from EImport.models import models
+from django.db import models
 
 # Create your models here.
 class Exception(models.Model):

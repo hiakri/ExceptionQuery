@@ -13,7 +13,7 @@ def upload(request):
 
 
 def exception_query(request):
-    return render(request, 'exception_query.html')
+    return render(request, 'exceptionQuery.html')
 
 
 def show(request):

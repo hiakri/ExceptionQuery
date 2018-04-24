@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'EQuery',
-    'EShow',
-    'EImport',
     'homepage',
     'file',
 ]
@@ -56,10 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ExceptionQuery.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR+"/templates", ]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'EQuery/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'homepage/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
