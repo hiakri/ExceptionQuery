@@ -5,7 +5,7 @@
 function copyText()
 {
     var kw=document.getElementById("search_text").value;
-    var urlname = 'http://127.0.0.1:8000/query?kw='+kw;
+    var urlname = "http://127.0.0.1:8000/EQuery/query/"+kw;
     window.location.href=urlname
 }
  document.onkeydown = function(event_e){

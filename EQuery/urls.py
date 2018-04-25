@@ -9,7 +9,7 @@ urlpatterns = [
 
     url(r'^index/$', index, name='index'),
     url(r'^exceptionquery/$', views.exception_query),
-    url(r'^query/$', views.query_result),
+    url(r'^query/(?P<exception_name>[a-z]+)/$', views.query_result, name='query_result'),
     url(r'^upload/$', views.uploadfile, name='import_uploadfile'),
     url(r'^show/$', views.show, name='show'),
 

@@ -16,15 +16,27 @@ def index(request):
 #定义异常查询页面入口函数，即异常查询页面
 def exception_query(request):
     return render(request, 'exceptionQuery.html')
-    # name = models.exception.objects.all()
-    # return render(request, 'exceptionQuery.html', {'name': name})
+
 
 
 #定义异常查询结果函数
+'''
 def query_result(request):
-        kw = request.GET('kw')
-        exception_name = models.exception.objects.filter(name='kw').update(hit=F('hit')+1)
+        kw = request.GET['kw']
+        exception_name = Exception.objects.filter(Q(name='kw')).update(hit=F('hit')+1)
         return render(request, 'queryResult.html', {'exception_name': exception_name, 'kw': kw})
+'''
+
+
+def query_result(request, exception_name):
+    if str(exception_name) == "":
+        return render(request, 'exceptionQuery.html')
+    try:
+        exception = Exception.objects.get(pk=exception_name).update(hit=F('hit') + 1)
+        return render(request,'queryResult.html', {'exception': exception})
+    except:
+        s = "异常%s不在数据库中" % exception_name
+        return s
 
 
 def uploadfile(request):

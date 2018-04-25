@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>异常信息</title>
 </head>
 <style type="text/css">
 body{
-background-color:#c1ffe4;
+background-color:#ccc;
 margin:0;
 padding:0;
 text-align:center;
@@ -48,8 +48,6 @@ text-align:center;
     background: -ms-linear-gradient(top,  #70c9e3 0%,#39a0be 100%); /* IE10+ */
     background: linear-gradient(top,  #70c9e3 0%,#39a0be 100%); /* W3C */
 }
-    /* Green Color */
-
 .green {
     color: #3e5706;
 
@@ -70,29 +68,34 @@ text-align:center;
     text-transform: uppercase;
     font: bold 30px/25px Arial, sans-serif;
 }
-
 </style>
-<h3 style="color: red;margin-left: -1000px">【{{ kw }}】的搜索结果:</h3>
-<body style="background-image: url('http://127.0.0.1:8000/media/upload/0.jpg');background-size: cover;">
-<table width='80%' align="center" border="1px" cellspacing="1px" bordercolor="#6699ff">
-        <tr>
-            <th>描述</th>
-            <th>例子</th>
+<body style="background-image:url('http://127.0.0.1:8000/media/upload/0.jpg');background-size: cover;">
+<form action="" method="post">
 
+    {% csrf_token %}
+    {% if film %}
+       <h3 style="color: red;margin-left: -1200px " >【{{ exception.name }}】的搜索结果:</h3>
+        <table width='80%' align="center" border="1px" cellspacing="1px" bordercolor="#6699ff">
+       <tr>
+                    <td></td>
+                    <th>描述</th>
+                    <td>{{ exception.description }}</td>
         </tr>
-    {% for film in films_name %}
         <tr>
-            <td width="40%">{{ exception.description }}</td>
-            <td width="60%">{{ exception.example }}</td>
+                    <td></td>
+                    <th>例子</th>
+                    <td>{{ exception.example }}</td>
         </tr>
-    {% endfor %}
+    </table>
 
-</table>
-<div class="button big blue" style="margin-top:23px;">
-    <a href="http://127.0.0.1:8000/EQuery/exceptionquery/">返回查询页面</a>
+    {% endif %}
+
+</form>
+<div class="button big blue" style="margin-right:23px;">
+<a href="http://127.0.0.1:8000/EQuery/exceptionquery/">返回查询页面</a>
 </div>
 <div class="button big green" style="margin-top:23px;">
-    <a href="http://127.0.0.1:8000/homepage/index/">返回首页</a>
+   <a href="http://127.0.0.1:8000/homepage/index/">返回首页</a>
 </div>
 </body>
 </html>
